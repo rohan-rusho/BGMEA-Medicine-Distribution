@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Medicine Distribution</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,600|Poppins:400,600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Auth Loading Overlay -->
+    <div id="analytics-loading"
+        style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#101522;z-index:9999;">
+        <span style="color:#26e6e6;font-size:1.5rem;">Loading Analytics...</span>
+    </div>
+    
+    <header>
+        <a href="dashboard.html" id="back-dashboard">← Dashboard</a>
+        <h1>Analytics</h1>
+        <div id="branch-indicator" style="color: #26e6e6; font-size: 0.9rem; margin-top: 0.5rem;"></div>
+    </header>
+    <section id="charts">
+        <div class="chart-container">
+            <h2 id="freq-chart-title">Most Frequent Medicines (This Month)</h2>
+            <canvas id="freq-meds-chart" width="400" height="300"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2 id="qty-chart-title">Total Quantity per Medicine (All Time)</h2>
+            <canvas id="total-qty-chart" width="400" height="300"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2 id="daily-chart-title">Daily Entries (Last 7 Days)</h2>
+            <canvas id="daily-entries-chart" width="400" height="300"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2 id="branch-chart-title">Branch-wise Distribution</h2>
+            <canvas id="branch-chart" width="400" height="300"></canvas>
+        </div>
+        <div class="stats-container">
+            <h2>Overall Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="total-entries">0</div>
+                    <div class="stat-label">Total Entries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="total-medicines">0</div>
+                    <div class="stat-label">Unique Medicines</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="total-quantity">0</div>
+                    <div class="stat-label">Total Quantity</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="active-branches">0</div>
+                    <div class="stat-label">Active Branches</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+    <script src="analytics.js"></script>
+</body>
+
+</html>

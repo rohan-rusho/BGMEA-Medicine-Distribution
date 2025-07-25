@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Distribution Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,600|Poppins:400,600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-title">
+        <img src="assets/logo.jpg" alt="BGMEA Logo" class="main-logo">
+        BGMEA Health Centre – Medicine Issue Portal
+    </div>
+    <div id="auth-section">
+        <div id="login-form" class="auth-form">
+            <div class="auth-title">Login</div>
+            <h2 style="display:none;">Login</h2>
+            <input type="text" id="login-identifier" placeholder="Username or Email">
+            <div class="password-input-container">
+                <input type="password" id="login-password" placeholder="Password">
+                <button type="button" class="password-toggle" onclick="togglePassword('login-password', this)">
+                    <span class="eye-icon">👁️</span>
+                </button>
+            </div>
+            <button id="login-btn">Login</button>
+            <p><a href="#" id="forgot-password-link">Forgot Password?</a></p>
+            <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+            <div class="auth-error" id="login-error"></div>
+        </div>
+        <div id="register-form" class="auth-form" style="display:none;">
+            <div class="auth-title">Register</div>
+            <h2 style="display:none;">Register</h2>
+            <input type="text" id="register-name" placeholder="Full Name">
+            <input type="text" id="register-username" placeholder="Username">
+            <input type="email" id="register-email" placeholder="Email">
+            <div class="password-input-container">
+                <input type="password" id="register-password" placeholder="Password">
+                <button type="button" class="password-toggle" onclick="togglePassword('register-password', this)">
+                    <span class="eye-icon">👁️</span>
+                </button>
+            </div>
+            <button id="register-btn">Register</button>
+            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+            <div class="auth-error" id="register-error"></div>
+        </div>
+        <div id="forgot-form" class="auth-form" style="display:none;">
+            <div class="auth-title">Forgot Password</div>
+            <h2 style="display:none;">Forgot Password</h2>
+            <input type="email" id="forgot-email" placeholder="Enter your email">
+            <button id="forgot-send-btn">SEND RESET LINK</button>
+            <p><a href="#" id="forgot-back-login">Back to Login</a></p>
+            <div class="auth-error" id="forgot-error"></div>
+            <div class="success-message" id="forgot-success"></div>
+        </div>
+    </div>
+    <!-- Modal for popups -->
+    <div id="modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span id="modal-close" class="modal-close">&times;</span>
+            <div id="modal-message"></div>
+        </div>
+    </div>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
