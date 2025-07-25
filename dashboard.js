@@ -1,12 +1,6 @@
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAstdSQcZtM8bdoNTuBhcmxs_GDZcf3Siw",
-    authDomain: "bgmea-75209.firebaseapp.com",
-    databaseURL: "https://bgmea-75209-default-rtdb.firebaseio.com",
-    projectId: "bgmea-75209",
-    storageBucket: "bgmea-75209.firebasestorage.app",
-    messagingSenderId: "962536265705",
-    appId: "1:962536265705:web:cba1e8191a40e8e4ca1d78"
+  
 };
 
 // Initialize Firebase
